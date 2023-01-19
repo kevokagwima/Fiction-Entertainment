@@ -1,0 +1,3105 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-bgcolor: #fece1a;
+  --dark-bgcolor: #212121;
+  --sec-bgcolor: #ffffff;
+  --text-color: #dbdbdb;
+  --glass-color: #676767;
+  --opacity-glass: rgba(103, 103, 103, 0.32);
+  --header-font: "Nunito", sans-serif;
+  --paragraph-font: "Open Sans", sans-serif;
+}
+
+::-webkit-scrollbar {
+  max-width: 0.4rem;
+  /* background-image: linear-gradient(
+    to bottom,
+    var(--dark-bgcolor),
+    var(--main-bgcolor),
+    var(--dark-bgcolor)
+  ); */
+  background-color: var(--dark-bgcolor);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-bgcolor);
+  border-radius: 30rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 3rem;
+}
+
+body {
+  /* background-image: linear-gradient(
+    to bottom,
+    var(--dark-bgcolor),
+    var(--dark-bgcolor),
+    var(--main-bgcolor),
+    var(--dark-bgcolor)
+  ); */
+  background-color: var(--dark-bgcolor);
+  color: var(--sec-bgcolor);
+  overflow-x: hidden;
+}
+
+h1,
+h4 {
+  font-family: var(--header-font);
+  text-transform: capitalize;
+  font-size: 5ch;
+  letter-spacing: 1px;
+}
+
+p,
+a,
+span {
+  font-family: var(--paragraph-font);
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  padding: 3rem;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  min-width: 100vw;
+  background-color: transparent;
+  z-index: 10;
+}
+
+.active-header {
+  box-shadow: 0 0 10px -6px var(--text-color);
+  outline: 1px solid var(--glass-color);
+  background-color: var(--dark-bgcolor);
+}
+
+header a > img {
+  max-height: 2.5rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#link {
+  color: var(--sec-bgcolor);
+  font-size: 1.8ch;
+  letter-spacing: 0.5px;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  cursor: pointer;
+  display: none;
+}
+
+.burger div {
+  width: 1.5rem;
+  min-height: 0.1rem;
+  background-color: var(--main-bgcolor);
+  border-radius: 30rem;
+}
+
+.burger div:nth-child(2) {
+  background-color: var(--sec-bgcolor);
+  width: 1.3rem;
+}
+
+.burger div:nth-child(3) {
+  background-color: red;
+  width: 1rem;
+}
+
+.side-nav {
+  position: absolute;
+  height: 100%;
+  min-width: 50%;
+  background-color: var(--main-bgcolor);
+  z-index: 10;
+  top: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  translate: 100%;
+  transition: 0.4s ease-in-out;
+  box-shadow: 0 0 20rem -1rem #212121;
+}
+
+.show-side-nav {
+  translate: 0;
+}
+
+.side-nav #link {
+  background-color: var(--opacity-glass);
+  padding: 1.5rem;
+  border-radius: 0.2rem;
+  font-size: 3ch;
+  color: var(--dark-bgcolor);
+}
+
+#close {
+  font-size: 3rem;
+  cursor: pointer;
+  color: red;
+}
+
+.hero {
+  margin-top: 4.8rem;
+  min-height: 41rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  column-gap: 5rem;
+}
+
+.hero-info {
+  padding: 2rem 0;
+}
+
+.hero-info h1 {
+  font-size: 7.5ch;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.hero-info h4 {
+  font-size: 3ch;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0.6rem 0 1.5rem;
+}
+
+#fiction {
+  color: var(--main-bgcolor);
+}
+
+.hero-info p {
+  max-width: 35rem;
+  font-size: 2.5ch;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.hero-image img {
+  max-height: 25rem;
+}
+
+.services h1,
+.services p,
+.portfolio h1,
+.portfolio p,
+.team h1,
+.team p,
+.about > h1,
+.about > p,
+.payment-plans h1,
+.payment-plans p,
+.contact h1,
+.contact p {
+  text-align: center;
+}
+
+.services p,
+.portfolio p,
+.team p,
+.about > p,
+.payment-plans p,
+.contact p {
+  margin-top: 2rem;
+  font-size: 2.8ch;
+}
+
+.services-info,
+.team-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 5rem;
+  padding: 0 6rem;
+}
+
+.services-box {
+  background-color: var(--opacity-glass);
+  padding: 1rem;
+  min-width: 10rem;
+  min-height: 25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10rem -5rem black;
+}
+
+.img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.img-box img {
+  max-height: 15rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.services-box h4 {
+  font-size: 3ch;
+  text-align: center;
+  font-weight: 400;
+}
+
+.portfolio-box {
+  margin-top: 2rem;
+  padding: 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.portfolio-menu {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#menu-item {
+  outline: 2px solid var(--glass-color);
+  min-width: 5vw;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+#menu-item:hover {
+  background-color: var(--glass-color);
+}
+
+.portfolio-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+}
+
+.portfolio-item {
+  max-height: 20rem;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 10rem -5rem black;
+}
+
+.item-image {
+  width: 100%;
+  height: 80%;
+  aspect-ratio: 0.5/0.4;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-info {
+  display: flex;
+  background-color: var(--dark-bgcolor);
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.item-info span {
+  text-align: center;
+}
+
+.team-box {
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 2rem;
+}
+
+.team-info {
+  background-color: var(--opacity-glass);
+  border-radius: 0.3rem;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 10rem -6rem black;
+}
+
+.team-img {
+  min-width: 15rem;
+  aspect-ratio: 1/0.5;
+}
+
+.team-img img {
+  width: 15rem;
+  object-fit: cover;
+}
+
+.team-details {
+  text-align: center;
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.team-details h1 {
+  font-size: 4ch;
+}
+
+.team-details h4 {
+  font-size: 2.5ch;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+#green {
+  color: #11ff29;
+}
+
+.about {
+  background-color: var(--dark-bgcolor);
+}
+
+.about p {
+  max-width: 82vw;
+  margin-inline: auto;
+  line-height: 1.6;
+  margin-top: 1rem;
+  font-size: 2.8ch;
+  text-align: center;
+}
+
+.shortlisting {
+  background-color: var(--opacity-glass);
+  margin: 4rem 5rem;
+  padding: 3rem;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shortlisting-info {
+  align-self: baseline;
+}
+
+.shortlisting-info p {
+  text-align: left;
+  max-width: 30rem;
+  font-size: 2.6ch;
+  color: var(--text-color);
+}
+
+.shortlisting-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.shorts {
+  background-color: var(--opacity-glass);
+  border-radius: 0.3rem;
+  min-width: 20rem;
+  padding: 1rem;
+}
+
+.shorts p {
+  margin: 0;
+  text-align: left;
+  font-size: 2ch;
+}
+
+.clients h1 {
+  text-align: center;
+}
+
+.testimonials {
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimony-item {
+  background-color: var(--opacity-glass);
+  border-radius: 0.3rem;
+  box-shadow: 0 0 10rem -5rem black;
+}
+
+.testimony-info {
+  min-height: 80%;
+  padding: 1rem;
+}
+
+.testimony-info p {
+  line-height: 1.6;
+  font-size: 2ch;
+}
+
+.testimony-user {
+  background-color: var(--glass-color);
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 0 10rem -5rem black;
+}
+
+.testimony-user img {
+  max-height: 3rem;
+  border-radius: 0.3rem;
+}
+
+.clients h4 {
+  text-align: center;
+  font-size: 3ch;
+  max-width: 66rem;
+  margin: 3rem auto;
+  line-height: 1.5;
+}
+
+.clients-box {
+  padding: 2rem 0;
+  background-color: var(--opacity-glass);
+  padding: 2rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 10rem -5rem black;
+}
+
+.clients-box h1 {
+  text-align: left;
+}
+
+.clients-box hr {
+  border: none;
+  outline: 1px solid var(--glass-color);
+  margin: 0.5rem 0 2rem;
+}
+
+.clients-details {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.client-info {
+  min-height: 8rem;
+  aspect-ratio: 1/0.5;
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.client-info img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.payment-plans p {
+  max-width: 55rem;
+  color: var(--text-color);
+  margin-inline: auto;
+}
+
+.payment-plans hr {
+  border: none;
+  outline: 1px solid var(--glass-color);
+  margin: 4rem 0;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  padding: 0 8rem;
+}
+
+.plans-info {
+  background-color: var(--opacity-glass);
+  border-radius: 0.3rem;
+  overflow: hidden;
+  height: max-content;
+}
+
+.plans-info > p {
+  background-color: var(--glass-color);
+  margin: 0;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+.plans-info h4 {
+  text-align: center;
+  padding: 1rem;
+  font-size: 3ch;
+}
+
+.plans-box {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.plans-details {
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 10rem -1rem black;
+  background-color: var(--opacity-glass);
+}
+
+.plans-details p {
+  margin: 0;
+  font-size: 2ch;
+}
+
+.call-plan {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.call-plan h4 {
+  font-size: 3ch;
+  text-transform: none;
+}
+
+.call-plan button {
+  padding: 1em 2em;
+  margin-top: 2rem;
+  font-family: var(--header-font);
+  background-color: var(--main-bgcolor);
+  border-radius: 0.3rem;
+  font-size: 2.2ch;
+  cursor: pointer;
+}
+
+.newsletter {
+  min-height: 20rem;
+  background-image: url(/Images/forest.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fade {
+  min-height: 20rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  position: relative;
+}
+
+#news {
+  position: absolute;
+  top: 2rem;
+}
+
+.fade p {
+  font-size: 2.8ch;
+  color: var(--text-color);
+}
+
+.fade form {
+  display: flex;
+  gap: 2rem;
+}
+
+form input,
+textarea {
+  padding: 1em;
+  border: none;
+  border-radius: 0.3rem;
+  font-family: var(--paragraph-font);
+}
+
+form button {
+  background-color: var(--main-bgcolor);
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  font-family: var(--header-font);
+  font-size: 2ch;
+  border-radius: 0.3rem;
+}
+
+.contact {
+  padding-inline: 6rem;
+}
+
+.contact-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  background-color: var(--opacity-glass);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-box div {
+  height: max-content;
+}
+
+.contact-info {
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info p {
+  text-align: left;
+  margin: 0;
+}
+
+.contact-form {
+  grid-column: 3/3;
+  grid-row: 1/3;
+}
+
+.contact-form h4 {
+  text-align: center;
+  font-size: 3ch;
+  font-weight: 400;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-form form input,
+textarea {
+  background-color: var(--glass-color);
+  font-size: 2ch;
+  max-height: 8rem;
+  max-width: 90vw;
+}
+
+.contact-form input::placeholder,
+textarea::placeholder {
+  color: var(--text-color);
+}
+
+.contact-form form button {
+  padding: 1em 2em;
+  margin-top: 1rem;
+}
+
+.maps {
+  grid-row: 2/3;
+  overflow: hidden;
+  grid-column: 1/3;
+}
+
+.maps iframe {
+  max-height: 16.8rem;
+  border-radius: 0.3rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 1300px) {
+  header {
+    padding: 1rem 3rem;
+  }
+
+  section,
+  .contact {
+    padding: 3rem;
+  }
+
+  .hero {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  .hero-info {
+    max-width: 100vw;
+  }
+
+  .hero-info h1 {
+    font-size: 7ch;
+    max-width: 100vw;
+  }
+
+  .hero-info h4 {
+    font-size: 3ch;
+  }
+
+  .hero-info p {
+    font-size: 3ch;
+  }
+
+  .hero-image {
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: 25rem;
+  }
+
+  .services p,
+  .portfolio p,
+  .team p,
+  .about > p,
+  .payment-plans p,
+  .contact p {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .services-info,
+  .team-box,
+  .portfolio-box,
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 3rem;
+    gap: 0.8rem;
+  }
+
+  .services-box {
+    min-height: 20rem;
+  }
+
+  .services-box h4 {
+    font-size: 2.5ch;
+  }
+
+  .portfolio-box {
+    gap: 3rem;
+  }
+
+  .portfolio-info {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .portfolio-item {
+    min-height: 10rem;
+  }
+
+  .item-image img {
+    object-fit: cover;
+  }
+
+  .img-box img {
+    max-height: 15rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .team-details h4 {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .team-details h1 {
+    font-size: 3ch;
+  }
+
+  .about-info p {
+    font-size: 2.5ch;
+    margin-top: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .about > h1,
+  .about-info p {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  .shortlisting {
+    margin: 4rem 0 0;
+    padding: 2rem 1rem;
+    align-items: baseline;
+  }
+
+  .shortlisting-info h1 {
+    font-size: 3ch;
+  }
+
+  .shortlisting-box {
+    margin-top: 2rem;
+  }
+
+  .testimonials {
+    margin-top: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem 1rem;
+  }
+
+  .clients h4 {
+    font-size: 2.8ch;
+    margin: 5rem 0;
+  }
+
+  .clients-details {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+  .client-info {
+    min-width: 16rem;
+  }
+
+  .plans {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .plans-info > p,
+  .plans-details p {
+    margin: 0;
+  }
+
+  #news {
+    font-size: 2.5ch;
+  }
+
+  .fade {
+    gap: 2rem;
+  }
+
+  .contact-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    padding: 3rem;
+  }
+
+  .contact-info {
+    gap: 1.5rem;
+    grid-column: 1/2;
+  }
+
+  .contact-info p {
+    margin: 0;
+  }
+
+  .contact-form {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  .maps {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .maps iframe {
+    max-height: 10rem;
+  }
+
+  footer h4 {
+    font-size: 3ch;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header {
+    padding: 1rem 3rem;
+  }
+
+  section,
+  .contact {
+    padding: 3rem;
+  }
+
+  .hero {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  .hero-info {
+    max-width: 100vw;
+  }
+
+  .hero-info h1 {
+    font-size: 6.5ch;
+    max-width: 100vw;
+  }
+
+  .hero-info h4 {
+    font-size: 2.5ch;
+  }
+
+  .hero-info p {
+    font-size: 2.5ch;
+  }
+
+  .hero-image {
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: 20rem;
+  }
+
+  .services p,
+  .portfolio p,
+  .team p,
+  .about > p,
+  .payment-plans p,
+  .contact p {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .services-info,
+  .team-box,
+  .portfolio-box,
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    gap: 0.8rem;
+  }
+
+  .services-box {
+    min-height: 10rem;
+  }
+
+  .services-box h4 {
+    font-size: 2.5ch;
+  }
+
+  .portfolio-box {
+    gap: 3rem;
+  }
+
+  .portfolio-info {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .portfolio-item {
+    min-height: 10rem;
+  }
+
+  .item-image img {
+    object-fit: cover;
+  }
+
+  .img-box img {
+    max-height: 8rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .team-details h4 {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .team-details h1 {
+    font-size: 3ch;
+  }
+
+  .about-info p {
+    font-size: 2.5ch;
+    margin-top: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .about > h1,
+  .about-info p {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  .shortlisting {
+    margin: 4rem 0 0;
+    padding: 2rem 1rem;
+    align-items: baseline;
+  }
+
+  .shortlisting-info h1 {
+    font-size: 3ch;
+  }
+
+  .shortlisting-box {
+    margin-top: 2rem;
+  }
+
+  .testimonials {
+    margin-top: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem 1rem;
+  }
+
+  .clients h4 {
+    font-size: 2.8ch;
+    margin: 5rem 0;
+  }
+
+  .clients-details {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+  .client-info {
+    min-width: 16rem;
+  }
+
+  .plans {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .plans-info > p,
+  .plans-details p {
+    margin: 0;
+  }
+
+  #news {
+    font-size: 2.5ch;
+  }
+
+  .fade {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .contact-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    padding: 3rem;
+  }
+
+  .contact-info {
+    gap: 1.5rem;
+    grid-column: 1/2;
+  }
+
+  .contact-info p {
+    margin: 0;
+  }
+
+  .contact-form {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  .maps {
+    grid-row: 3/3;
+  }
+
+  .maps iframe {
+    max-height: 10rem;
+  }
+
+  footer h4 {
+    font-size: 3ch;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  header {
+    padding: 1rem 3rem;
+  }
+
+  section,
+  .contact {
+    padding: 3rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  .hero-info {
+    max-width: 100vw;
+  }
+
+  .hero-info h1 {
+    font-size: 8ch;
+    max-width: 100vw;
+  }
+
+  .hero-info h4 {
+    font-size: 3.5ch;
+  }
+
+  .hero-info p {
+    font-size: 3ch;
+  }
+
+  .hero-image {
+    grid-column: 1/2;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: 25rem;
+  }
+
+  .services p,
+  .portfolio p,
+  .team p,
+  .about > p,
+  .payment-plans p,
+  .contact p {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .services-info,
+  .team-box,
+  .portfolio-box,
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    gap: 0.8rem;
+  }
+
+  .services-box {
+    min-height: 10rem;
+  }
+
+  .services-box h4 {
+    font-size: 2.5ch;
+  }
+
+  .portfolio-box {
+    gap: 3rem;
+  }
+
+  .portfolio-info {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .portfolio-item {
+    min-height: 10rem;
+  }
+
+  .item-image img {
+    object-fit: cover;
+  }
+
+  .img-box img {
+    max-height: 8rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .team-details h4 {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .team-details h1 {
+    font-size: 3ch;
+  }
+
+  .about-info p {
+    font-size: 2ch;
+    margin-top: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .about > h1,
+  .about-info p {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  .shortlisting {
+    margin: 4rem 0 0;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    align-items: baseline;
+  }
+
+  .shortlisting-info h1 {
+    font-size: 3ch;
+  }
+
+  .shortlisting-box {
+    margin-top: 2rem;
+    flex-grow: 1;
+    min-width: 100%;
+  }
+
+  .testimonials {
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem 1rem;
+  }
+
+  .clients h4 {
+    font-size: 2.8ch;
+    margin: 5rem 0;
+  }
+
+  .clients-details {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+  .client-info {
+    min-width: 16rem;
+  }
+
+  .plans {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .plans-info > p,
+  .plans-details p {
+    margin: 0;
+  }
+
+  #news {
+    font-size: 2.5ch;
+  }
+
+  .fade {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .contact-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    padding: 3rem;
+  }
+
+  .contact-info {
+    gap: 1.5rem;
+    grid-column: 1/2;
+  }
+
+  .contact-info p {
+    margin: 0;
+  }
+
+  .contact-form {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  .maps {
+    grid-row: 3/3;
+  }
+
+  .maps iframe {
+    max-height: 10rem;
+  }
+
+  footer h4 {
+    font-size: 3ch;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  header {
+    padding: 1rem 3rem;
+  }
+
+  section,
+  .contact {
+    padding: 3rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  .hero-info {
+    max-width: 100vw;
+  }
+
+  .hero-info h1 {
+    font-size: 8ch;
+    max-width: 100vw;
+  }
+
+  .hero-info h4 {
+    font-size: 3.5ch;
+  }
+
+  .hero-info p {
+    font-size: 3ch;
+  }
+
+  .hero-image {
+    grid-column: 1/2;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: 25rem;
+  }
+
+  .services p,
+  .portfolio p,
+  .team p,
+  .about > p,
+  .payment-plans p,
+  .contact p {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .services-info,
+  .team-box,
+  .portfolio-box,
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    gap: 0.8rem;
+  }
+
+  .services-box {
+    min-height: 10rem;
+  }
+
+  .services-box h4 {
+    font-size: 2.5ch;
+  }
+
+  .portfolio-box {
+    gap: 3rem;
+  }
+
+  .portfolio-info {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .portfolio-item {
+    min-height: 10rem;
+  }
+
+  .item-image img {
+    object-fit: cover;
+  }
+
+  .img-box img {
+    max-height: 8rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .team-details h4 {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .team-details h1 {
+    font-size: 3ch;
+  }
+
+  .about-info p {
+    font-size: 2ch;
+    margin-top: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .about > h1,
+  .about-info p {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  .shortlisting {
+    margin: 4rem 0 0;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    align-items: baseline;
+  }
+
+  .shortlisting-info h1 {
+    font-size: 3ch;
+  }
+
+  .shortlisting-box {
+    margin-top: 2rem;
+    flex-grow: 1;
+    min-width: 100%;
+  }
+
+  .testimonials {
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem 1rem;
+  }
+
+  .clients h4 {
+    font-size: 2.8ch;
+    margin: 5rem 0;
+  }
+
+  .clients-details {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+  .client-info {
+    min-width: 16rem;
+  }
+
+  .plans {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .plans-info > p,
+  .plans-details p {
+    margin: 0;
+  }
+
+  #news {
+    font-size: 2.5ch;
+  }
+
+  .fade {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .contact-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    padding: 3rem;
+  }
+
+  .contact-info {
+    gap: 1.5rem;
+    grid-column: 1/2;
+  }
+
+  .contact-info p {
+    margin: 0;
+  }
+
+  .contact-form {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  .maps {
+    grid-row: 3/3;
+  }
+
+  .maps iframe {
+    max-height: 10rem;
+  }
+
+  footer h4 {
+    font-size: 3ch;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  header {
+    padding: 1rem 3rem;
+  }
+
+  section,
+  .contact {
+    padding: 3rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  .hero-info {
+    max-width: 100vw;
+  }
+
+  .hero-info h1 {
+    font-size: 8ch;
+    max-width: 100vw;
+  }
+
+  .hero-info h4 {
+    font-size: 3.5ch;
+  }
+
+  .hero-info p {
+    font-size: 3ch;
+  }
+
+  .hero-image {
+    grid-column: 1/2;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: 25rem;
+  }
+
+  .services p,
+  .portfolio p,
+  .team p,
+  .about > p,
+  .payment-plans p,
+  .contact p {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .services-info,
+  .team-box,
+  .portfolio-box,
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    gap: 0.8rem;
+  }
+
+  .services-box {
+    min-height: 10rem;
+  }
+
+  .services-box h4 {
+    font-size: 2.5ch;
+  }
+
+  .portfolio-box {
+    gap: 3rem;
+  }
+
+  .portfolio-info {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .portfolio-item {
+    min-height: 10rem;
+  }
+
+  .item-image img {
+    object-fit: cover;
+  }
+
+  .img-box img {
+    max-height: 8rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .team-details h4 {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .team-details h1 {
+    font-size: 3ch;
+  }
+
+  .about-info p {
+    font-size: 2ch;
+    margin-top: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .about > h1,
+  .about-info p {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  .shortlisting {
+    margin: 4rem 0 0;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    align-items: baseline;
+  }
+
+  .shortlisting-info h1 {
+    font-size: 3ch;
+  }
+
+  .shortlisting-box {
+    margin-top: 2rem;
+    flex-grow: 1;
+    min-width: 100%;
+  }
+
+  .testimonials {
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem 1rem;
+  }
+
+  .clients h4 {
+    font-size: 2.8ch;
+    margin: 5rem 0;
+  }
+
+  .clients-details {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+  .client-info {
+    min-width: 16rem;
+  }
+
+  .plans {
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .plans-info:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  .plans-info > p,
+  .plans-details p {
+    margin: 0;
+  }
+
+  #news {
+    font-size: 2.5ch;
+  }
+
+  .fade {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .contact-box {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding: 3rem;
+  }
+
+  .contact-info {
+    gap: 1.5rem;
+  }
+
+  .contact-info p {
+    margin: 0;
+  }
+
+  .contact-form {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  .maps {
+    grid-row: 3/3;
+  }
+
+  .maps iframe {
+    max-height: 10rem;
+  }
+
+  footer h4 {
+    font-size: 3ch;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  header {
+    padding: 1rem 3rem;
+  }
+
+  section,
+  .contact {
+    padding: 3rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  .hero-info {
+    max-width: 100vw;
+  }
+
+  .hero-info h1 {
+    font-size: 9ch;
+    max-width: 100vw;
+  }
+
+  .hero-info h4 {
+    font-size: 4ch;
+  }
+
+  .hero-info p {
+    font-size: 3.4ch;
+  }
+
+  .hero-image {
+    grid-column: 1/2;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: 25rem;
+  }
+
+  .services p,
+  .portfolio p,
+  .team p,
+  .about > p,
+  .payment-plans p,
+  .contact p {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .services-info,
+  .team-box,
+  .portfolio-box,
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    gap: 0.8rem;
+  }
+
+  .services-box {
+    min-height: 10rem;
+  }
+
+  .services-box h4 {
+    font-size: 2.5ch;
+  }
+
+  .portfolio-box {
+    gap: 3rem;
+  }
+
+  .portfolio-info {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .portfolio-item {
+    min-height: 10rem;
+  }
+
+  .item-image img {
+    object-fit: cover;
+  }
+
+  .img-box img {
+    max-height: 8rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .team-details h4 {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .team-details h1 {
+    font-size: 3ch;
+  }
+
+  .about-info p {
+    font-size: 2ch;
+    margin-top: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .about > h1,
+  .about-info p {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  .shortlisting {
+    margin: 4rem 0 0;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    align-items: baseline;
+  }
+
+  .shortlisting-info h1 {
+    font-size: 3ch;
+  }
+
+  .shortlisting-box {
+    margin-top: 2rem;
+    flex-grow: 1;
+    min-width: 100%;
+  }
+
+  .testimonials {
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem 1rem;
+  }
+
+  .clients h4 {
+    font-size: 2.8ch;
+    margin: 5rem 0;
+  }
+
+  .clients-details {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+  .client-info {
+    min-width: 16rem;
+  }
+
+  .plans {
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .plans-info:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  .plans-info > p,
+  .plans-details p {
+    margin: 0;
+  }
+
+  #news {
+    font-size: 2.5ch;
+  }
+
+  .fade {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .contact-box {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding: 3rem;
+  }
+
+  .contact-info {
+    gap: 1.5rem;
+  }
+
+  .contact-info p {
+    margin: 0;
+  }
+
+  .contact-form {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  .maps {
+    grid-row: 3/3;
+  }
+
+  .maps iframe {
+    max-height: 10rem;
+  }
+
+  footer h4 {
+    font-size: 3ch;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    padding: 1rem 3rem;
+  }
+
+  section,
+  .contact {
+    padding: 3rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  .hero-info {
+    max-width: 100vw;
+  }
+
+  .hero-info h1 {
+    font-size: 7ch;
+    max-width: 100vw;
+  }
+
+  .hero-info h4 {
+    font-size: 3ch;
+  }
+
+  .hero-info p {
+    font-size: 2.8ch;
+  }
+
+  .hero-image {
+    grid-column: 1/2;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: 20rem;
+  }
+
+  .services p,
+  .portfolio p,
+  .team p,
+  .about > p,
+  .payment-plans p,
+  .contact p {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .services-info,
+  .team-box,
+  .portfolio-box,
+  .testimonials {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+  }
+
+  .services-box {
+    min-height: 10rem;
+  }
+
+  .services-box h4 {
+    font-size: 2.5ch;
+  }
+
+  .portfolio-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio-item {
+    min-height: 10rem;
+  }
+
+  .item-image {
+    height: max-content;
+  }
+
+  .item-image img {
+    object-fit: cover;
+  }
+
+  .img-box img {
+    max-height: 8rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .team-details h4 {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .team-details h1 {
+    font-size: 3ch;
+  }
+
+  .about-info p {
+    font-size: 2ch;
+    margin-top: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .about > h1,
+  .about-info p {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  .shortlisting {
+    margin: 4rem 0 0;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    align-items: baseline;
+  }
+
+  .shortlisting-info h1 {
+    font-size: 3ch;
+  }
+
+  .shortlisting-box {
+    margin-top: 2rem;
+    flex-grow: 1;
+    min-width: 100%;
+  }
+
+  .testimonials {
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem 1rem;
+  }
+
+  .clients h4 {
+    font-size: 2.8ch;
+    margin: 5rem 0;
+  }
+
+  .clients-details {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+  .client-info {
+    min-width: 16rem;
+  }
+
+  .plans {
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .plans-info:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  .plans-info > p,
+  .plans-details p {
+    margin: 0;
+  }
+
+  #news {
+    font-size: 2.5ch;
+  }
+
+  .fade {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .contact-box {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding: 3rem;
+  }
+
+  .contact-info {
+    gap: 1.5rem;
+  }
+
+  .contact-info p {
+    margin: 0;
+  }
+
+  .contact-form {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  .maps {
+    grid-row: 3/3;
+  }
+
+  .maps iframe {
+    max-height: 10rem;
+  }
+
+  footer h4 {
+    font-size: 3ch;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 1rem;
+  }
+
+  section,
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .hero {
+    grid-template-columns: auto;
+    gap: 3rem;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  .hero-info {
+    max-width: 100vw;
+  }
+
+  .hero-info h1 {
+    font-size: 6.5ch;
+    max-width: 100vw;
+  }
+
+  .hero-info h4 {
+    font-size: 3.2ch;
+  }
+
+  .hero-info p {
+    font-size: 2.6ch;
+  }
+
+  .hero-image {
+    grid-column: 1/2;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: 20rem;
+  }
+
+  .services p,
+  .portfolio p,
+  .team p,
+  .about > p,
+  .payment-plans p,
+  .contact p {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .services-info,
+  .team-box,
+  .portfolio-box,
+  .testimonials {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+  }
+
+  .services-box {
+    min-height: 10rem;
+  }
+
+  .services-box h4 {
+    font-size: 2ch;
+  }
+
+  .portfolio-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio-item {
+    min-height: 10rem;
+  }
+
+  .item-image {
+    height: max-content;
+  }
+
+  .item-image img {
+    object-fit: cover;
+  }
+
+  .img-box img {
+    max-height: 8rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .team-details h4 {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .team-details h1 {
+    font-size: 3ch;
+  }
+
+  .about-info p {
+    font-size: 2ch;
+    margin-top: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .about > h1,
+  .about-info p {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  .shortlisting {
+    margin: 4rem 0 0;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    align-items: baseline;
+  }
+
+  .shortlisting-info h1 {
+    font-size: 3ch;
+  }
+
+  .shortlisting-box {
+    margin-top: 2rem;
+    flex-grow: 1;
+    min-width: 100%;
+  }
+
+  .testimonials {
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem 1rem;
+  }
+
+  .clients h4 {
+    font-size: 2.8ch;
+    margin: 5rem 0;
+  }
+
+  .clients-details {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+  .client-info {
+    min-width: 16rem;
+  }
+
+  .plans {
+    display: flex;
+    flex-direction: column;
+    padding: 0 4rem;
+    gap: 2rem;
+  }
+
+  .plans-info > p,
+  .plans-details p {
+    margin: 0;
+  }
+
+  #news {
+    font-size: 2.5ch;
+  }
+
+  .fade {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .contact-box {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding: 3rem;
+  }
+
+  .contact-info {
+    gap: 1.5rem;
+  }
+
+  .contact-info p {
+    margin: 0;
+  }
+
+  .contact-form {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  .maps {
+    grid-row: 3/3;
+  }
+
+  .maps iframe {
+    max-height: 10rem;
+  }
+
+  footer h4 {
+    font-size: 3ch;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    padding: 1rem;
+  }
+
+  section,
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: 100vw;
+  }
+
+  .hero-info {
+    max-width: 100vw;
+  }
+
+  .hero-info h1 {
+    font-size: 4.8ch;
+    max-width: 90vw;
+  }
+
+  .hero-info h4 {
+    font-size: 3ch;
+  }
+
+  .hero-info p {
+    font-size: 2.8ch;
+  }
+
+  .hero-image {
+    grid-column: 1/2;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: 15rem;
+  }
+
+  .services p,
+  .portfolio p,
+  .team p,
+  .about > p,
+  .payment-plans p,
+  .contact p {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .services-info,
+  .team-box,
+  .portfolio-box,
+  .testimonials {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+  }
+
+  .services-box {
+    min-height: 10rem;
+  }
+
+  .services-box h4 {
+    font-size: 2ch;
+  }
+
+  .portfolio-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio-item {
+    min-height: 10rem;
+  }
+
+  .item-image {
+    height: max-content;
+  }
+
+  .item-image img {
+    object-fit: cover;
+  }
+
+  .img-box img {
+    max-height: 8rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+  }
+
+  .team-img img {
+    width: 80%;
+    height: 90%;
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .team-details h4 {
+    margin-top: 2rem;
+    font-size: 2ch;
+  }
+
+  .team-details h1 {
+    font-size: 2.5ch;
+  }
+
+  .about-info p {
+    font-size: 2ch;
+    margin-top: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .about h1,
+  .about p {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  .shortlisting {
+    margin: 4rem 0 0;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .shortlisting-info h1 {
+    font-size: 3ch;
+  }
+
+  .shortlisting-box {
+    margin-top: 2rem;
+  }
+
+  .testimonials {
+    margin-top: 2rem;
+    row-gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .clients h4 {
+    font-size: 2.5ch;
+    margin: 5rem 0;
+  }
+
+  .clients-details {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+  .client-info {
+    min-width: 16rem;
+  }
+
+  .plans {
+    grid-template-columns: 1fr;
+    padding: 0 4rem;
+    gap: 2rem;
+  }
+
+  .plans-info > p,
+  .plans-details p {
+    margin: 0;
+  }
+
+  #news {
+    font-size: 2.5ch;
+  }
+
+  .fade {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .contact-box {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding: 3rem;
+  }
+
+  .contact-info {
+    gap: 1.5rem;
+  }
+
+  .contact-info p {
+    margin: 0;
+  }
+
+  .contact-form {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  .maps {
+    grid-row: 3/3;
+  }
+
+  .maps iframe {
+    max-height: 10rem;
+  }
+
+  footer h4 {
+    font-size: 3ch;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  section,
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: 100vw;
+  }
+
+  .hero-info {
+    max-width: 100vw;
+  }
+
+  .hero-info h1 {
+    font-size: 4.5ch;
+    max-width: 90vw;
+  }
+
+  .hero-info h4 {
+    font-size: 2ch;
+  }
+
+  .hero-info p {
+    font-size: 2ch;
+  }
+
+  .hero-image {
+    grid-column: 1/2;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: 15rem;
+  }
+
+  .services p,
+  .portfolio p,
+  .team p,
+  .about > p,
+  .payment-plans p,
+  .contact p {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .services-info,
+  .team-box,
+  .portfolio-box,
+  .testimonials {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .services-box {
+    min-height: 10rem;
+  }
+
+  .portfolio-info {
+    grid-template-columns: 1fr;
+  }
+
+  .img-box img {
+    max-height: 8rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .team-details h4 {
+    margin-top: 2rem;
+  }
+
+  .about-info p {
+    font-size: 2ch;
+    margin-top: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .about h1,
+  .about p {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  .shortlisting {
+    margin: 4rem 0 0;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .shortlisting-info h1 {
+    font-size: 3ch;
+  }
+
+  .shortlisting-box {
+    margin-top: 2rem;
+  }
+
+  .testimonials {
+    margin-top: 2rem;
+    row-gap: 3rem;
+  }
+
+  .clients h4 {
+    font-size: 2.5ch;
+    margin: 5rem 0;
+  }
+
+  .clients-details {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+  .client-info {
+    min-width: 16rem;
+  }
+
+  .plans {
+    grid-template-columns: auto;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .plans-info > p,
+  .plans-details p {
+    margin: 0;
+  }
+
+  #news {
+    font-size: 2.5ch;
+  }
+
+  .fade {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .contact-box {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding: 0;
+  }
+
+  .contact-info {
+    gap: 1rem;
+  }
+
+  .contact-info p {
+    margin: 0;
+  }
+
+  .contact-form {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  .maps {
+    grid-row: 3/3;
+  }
+
+  .maps iframe {
+    max-height: 10rem;
+  }
+
+  footer h4 {
+    font-size: 3ch;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  header {
+    padding: 1rem;
+  }
+
+  section > h1,
+  .clients-box h1 {
+    font-size: 3ch;
+  }
+
+  section,
+  .contact {
+    padding: 2rem 1rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: 100vw;
+  }
+
+  .hero-info {
+    min-width: 100vw;
+    padding: 2rem 1rem;
+  }
+
+  .hero-info h1 {
+    font-size: 3ch;
+    max-width: 90vw;
+  }
+
+  .hero-info h4 {
+    font-size: 1.8ch;
+    line-height: 1.5;
+  }
+
+  .hero-info p {
+    font-size: 1.8ch;
+  }
+
+  .hero-image {
+    grid-column: 1/2;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-height: 10rem;
+  }
+
+  .services p,
+  .portfolio p,
+  .team p,
+  .about > p,
+  .payment-plans p,
+  .contact p {
+    margin-top: 2rem;
+    font-size: 2.5ch;
+  }
+
+  .services-info,
+  .team-box,
+  .portfolio-box,
+  .testimonials {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .services-box {
+    min-height: 10rem;
+  }
+
+  .portfolio-box {
+    padding: 2rem 0;
+  }
+
+  .portfolio-info {
+    grid-template-columns: 1fr;
+  }
+
+  .img-box img {
+    max-height: 8rem;
+  }
+
+  .team-info {
+    flex-direction: column;
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .team-details h4 {
+    margin-top: 2rem;
+  }
+
+  .about-info p {
+    font-size: 2ch;
+    margin-top: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .about h1,
+  .about p {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  .shortlisting {
+    margin: 4rem 0 0;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .shortlisting-info h1 {
+    font-size: 3ch;
+  }
+
+  .shortlisting-box {
+    margin-top: 2rem;
+    max-width: 100%;
+  }
+
+  .shorts {
+    min-width: 10vw;
+  }
+
+  .testimonials {
+    margin-top: 2rem;
+    row-gap: 3rem;
+  }
+
+  .clients h4 {
+    font-size: 2.5ch;
+    margin: 5rem 0;
+  }
+
+  .clients-details {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+  .client-info {
+    min-width: 16rem;
+  }
+
+  .plans {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .plans-info > p,
+  .plans-details p {
+    margin: 0;
+    font-size: 2ch;
+  }
+
+  #news {
+    font-size: 2.5ch;
+  }
+
+  .fade {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .fade p {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 2ch;
+  }
+
+  .fade form {
+    flex-direction: column;
+  }
+
+  .contact-box {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding: 1rem;
+  }
+
+  .contact-info {
+    gap: 1rem;
+  }
+
+  .contact-info p {
+    margin: 0;
+    font-size: 1.6ch;
+  }
+
+  .contact-form {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  .maps {
+    grid-row: 3/3;
+  }
+
+  .maps iframe {
+    max-height: 10rem;
+  }
+
+  footer h4 {
+    font-size: 3ch;
+  }
+}
