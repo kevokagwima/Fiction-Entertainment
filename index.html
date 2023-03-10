@@ -6,18 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>African Fiction Academy</title>
+  <title>Fiction Entertainment</title>
 </head>
 
 <body>
   <header class="header">
-    <a href="index.html">
-      <img src="/Images/logo.png" alt="African Fiction Academy">
-    </a>
     <div class="links">
       <a id="link" href="#services">Services</a>
       <a id="link" href="#portfolio">Portfolio</a>
       <a id="link" href="#about">About</a>
+    </div>
+    <a href="index.html">
+      <img src="/Images/logo.png" alt="African Fiction Academy">
+    </a>
+    <div class="links">
       <a id="link" href="#clients">Clients</a>
       <a id="link" href="#price">Price</a>
       <a id="link" href="#contact">Contact</a>
@@ -38,6 +40,9 @@
     <a id="link" href="#contact">Contact</a>
   </div>
   <section class="hero">
+    <!-- <div class="color">
+      <div class="color-info"></div>
+    </div> -->
     <div class="hero-info">
       <h1>Welcome to <span id="fiction">fiction</span> <br> entertainment</h1>
       <h4>The production creative agency</h4>
@@ -47,10 +52,12 @@
       </p>
     </div>
     <div class="hero-image">
-      <img src="/Images/studio.png" alt="production set">
+      <img src="/Images/studio.png" alt="studio">
     </div>
   </section>
   <section id="services" class="services">
+    <div class="shapes"></div>
+    <div class="shapes"></div>
     <h1>What we do?</h1>
     <p>As a Production company and a Creative agency all bundled into one, we are uniquely <br> positioned to offer you
       all
@@ -81,13 +88,13 @@
     <p>We have been around the block in terms of production and have <br> worked with organizations across the board</p>
     <div class="portfolio-box">
       <div class="portfolio-menu">
-        <span id="menu-item">All</span>
-        <span id="menu-item">First</span>
-        <span id="menu-item">Second</span>
-        <span id="menu-item">Third</span>
+        <button class="menu-item active" onclick="filterSelection('all')">All</button>
+        <button class="menu-item" onclick="filterSelection('first')">First</button>
+        <button class="menu-item" onclick="filterSelection('second')">Second</button>
+        <button class="menu-item" onclick="filterSelection('third')">Third</button>
       </div>
       <div class="portfolio-info">
-        <div class="portfolio-item">
+        <div class="portfolio-item first">
           <div class="item-image">
             <img src="/Images/Portfolio01.png" loading="lazy" alt="">
           </div>
@@ -96,7 +103,7 @@
             <span>Circa. 2012-2016</span>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item second">
           <div class="item-image">
             <img src="/Images/Portfolio02.png" loading="lazy" alt="">
           </div>
@@ -105,7 +112,7 @@
             <span>Circa. 2012-2016</span>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item third">
           <div class="item-image">
             <img src="/Images/Portfolio03.png" loading="lazy" alt="">
           </div>
@@ -114,7 +121,7 @@
             <span>Circa. 2012-2016</span>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item first">
           <div class="item-image">
             <img src="/Images/Portfolio04.png" loading="lazy" alt="">
           </div>
@@ -123,7 +130,7 @@
             <span>CNC Laser Cut</span>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item second">
           <div class="item-image">
             <img src="/Images/Portfolio05.png" loading="lazy" alt="">
           </div>
@@ -132,7 +139,7 @@
             <span>Madaraka Day Paintball</span>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item third">
           <div class="item-image">
             <img src="/Images/Portfolio06.png" loading="lazy" alt="">
           </div>
@@ -141,7 +148,7 @@
             <span>Animated Series</span>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item first">
           <div class="item-image">
             <img src="/Images/Portfolio07.png" loading="lazy" alt="">
           </div>
@@ -150,7 +157,7 @@
             <span>Carolina For Kibera</span>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item second">
           <div class="item-image">
             <img src="/Images/Portfolio08.png" loading="lazy" alt="">
           </div>
@@ -159,7 +166,7 @@
             <span>Majirani TV Show</span>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item third">
           <div class="item-image">
             <img src="/Images/Portfolio09.png" loading="lazy" alt="">
           </div>
@@ -407,7 +414,7 @@
   </section>
   <div class="newsletter">
     <div class="fade">
-      <h1 id="news">Newsletter</h1>
+      <h1>Newsletter</h1>
       <p>Get special deals and discounts on the go and claim them</p>
       <form action="#">
         <input type="text" name="" placeholder="Enter Email Address" id="">

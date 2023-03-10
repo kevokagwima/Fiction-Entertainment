@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -8,7 +9,7 @@
 }
 
 :root {
-  --main-bgcolor: #fece1a;
+  --main-bgcolor: #f6c000;
   --dark-bgcolor: #212121;
   --sec-bgcolor: #ffffff;
   --text-color: #dbdbdb;
@@ -16,16 +17,11 @@
   --opacity-glass: rgba(103, 103, 103, 0.32);
   --header-font: "Nunito", sans-serif;
   --paragraph-font: "Open Sans", sans-serif;
+  --hero-font: "Cinzel Decorative", cursive;
 }
 
 ::-webkit-scrollbar {
   max-width: 0.4rem;
-  /* background-image: linear-gradient(
-    to bottom,
-    var(--dark-bgcolor),
-    var(--main-bgcolor),
-    var(--dark-bgcolor)
-  ); */
   background-color: var(--dark-bgcolor);
 }
 
@@ -73,7 +69,9 @@ a {
 
 section {
   padding: 3rem;
-  overflow-x: hidden;
+  /* overflow: hidden; */
+  position: relative;
+  isolation: isolate;
 }
 
 header {
@@ -108,6 +106,7 @@ header a > img {
   color: var(--sec-bgcolor);
   font-size: 1.8ch;
   letter-spacing: 0.5px;
+  font-family: var(--hero-font);
 }
 
 .burger {
@@ -172,22 +171,57 @@ header a > img {
 }
 
 .hero {
-  margin-top: 4.8rem;
-  min-height: 41rem;
+  min-height: 100svh;
   display: grid;
   grid-template-columns: repeat(2, auto);
   align-items: center;
   column-gap: 5rem;
+  background-color: var(--dark-bgcolor);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.color {
+  position: absolute;
+  top: -8rem;
+  right: -5rem;
+  height: 150%;
+  width: 45rem;
+  background-color: var(--main-bgcolor);
+  rotate: 15deg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.color-info {
+  min-height: 100%;
+  min-width: 100%;
+  background-image: url(/Images/What-does-a-film-studio-do.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  rotate: -15deg;
+  background-color: red;
+}
+
+.color img {
+  max-height: 20rem;
 }
 
 .hero-info {
   padding: 2rem 0;
+  z-index: 1;
+  max-width: max-content;
 }
 
 .hero-info h1 {
-  font-size: 7.5ch;
+  font-size: 7ch;
   text-transform: uppercase;
   letter-spacing: 5px;
+  font-family: var(--hero-font);
 }
 
 .hero-info h4 {
@@ -200,6 +234,10 @@ header a > img {
 
 #fiction {
   color: var(--main-bgcolor);
+}
+
+.hero-info #fiction {
+  font-family: var(--hero-font);
 }
 
 .hero-info p {
@@ -236,6 +274,24 @@ header a > img {
 .contact p {
   margin-top: 2rem;
   font-size: 2.8ch;
+}
+
+.shapes {
+  position: absolute;
+  min-height: 35rem;
+  min-width: 20rem;
+  background-color: var(--main-bgcolor);
+  z-index: -1;
+  rotate: 60deg;
+  border-radius: 30rem 5rem;
+}
+
+.shapes:nth-child(1) {
+  inset: -5rem auto auto -2rem;
+}
+
+.shapes:nth-child(2) {
+  inset: auto -10rem -10rem auto;
 }
 
 .services-info,
@@ -292,16 +348,21 @@ header a > img {
   align-items: center;
 }
 
-#menu-item {
+.menu-item {
   outline: 2px solid var(--glass-color);
   min-width: 5vw;
   padding: 0.5rem;
   border-radius: 0.3rem;
   text-align: center;
+  font-size: 2ch;
   cursor: pointer;
+  border: none;
+  background-color: var(--dark-bgcolor);
+  color: var(--sec-bgcolor);
+  font-family: var(--paragraph-font);
 }
 
-#menu-item:hover {
+.menu-item.active {
   background-color: var(--glass-color);
 }
 
@@ -319,6 +380,11 @@ header a > img {
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0 0 10rem -5rem black;
+  display: none;
+}
+
+.show {
+  display: flex;
 }
 
 .item-image {
@@ -2323,6 +2389,20 @@ footer {
     max-height: 20rem;
   }
 
+  .shapes {
+    min-height: 20rem;
+    min-width: 20rem;
+  }
+
+  .shapes:nth-child(1) {
+    left: -8rem;
+  }
+
+  .shapes:nth-child(2) {
+    right: -5rem;
+    bottom: -8rem;
+  }
+
   .services p,
   .portfolio p,
   .team p,
@@ -2527,7 +2607,7 @@ footer {
   }
 
   .hero-info p {
-    font-size: 2.5ch;
+    font-size: 2ch;
   }
 
   .hero-image {
@@ -2537,6 +2617,20 @@ footer {
 
   .hero-image img {
     max-height: 15rem;
+  }
+
+  .shapes {
+    min-height: 20rem;
+    min-width: 20rem;
+  }
+
+  .shapes:nth-child(1) {
+    left: -8rem;
+  }
+
+  .shapes:nth-child(2) {
+    right: -5rem;
+    bottom: -8rem;
   }
 
   .services p,
@@ -2729,28 +2823,27 @@ footer {
   }
 
   .hero {
+    padding-top: 5rem;
     grid-template-columns: 1fr;
     gap: 3rem;
     width: 100vw;
   }
 
   .hero-info {
-    min-width: 100vw;
-    padding: 2rem 1rem;
+    padding: 2rem 0;
   }
 
   .hero-info h1 {
-    font-size: 3ch;
-    max-width: 90vw;
+    font-size: 2.9ch;
   }
 
   .hero-info h4 {
-    font-size: 2ch;
+    font-size: 2.2ch;
     line-height: 1.5;
   }
 
   .hero-info p {
-    font-size: 2ch;
+    font-size: 1.6ch;
   }
 
   .hero-image {
@@ -2760,6 +2853,20 @@ footer {
 
   .hero-image img {
     max-height: 10rem;
+  }
+
+  .shapes {
+    min-height: 10rem;
+    min-width: 15rem;
+  }
+
+  .shapes:nth-child(1) {
+    left: -8rem;
+  }
+
+  .shapes:nth-child(2) {
+    right: -5rem;
+    bottom: -5rem;
   }
 
   .services p,
@@ -2875,18 +2982,19 @@ footer {
     font-size: 2ch;
   }
 
-  #news {
-    font-size: 2.5ch;
-  }
-
   .fade {
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .fade h1 {
+    font-size: 2.5ch;
   }
 
   .fade p {
-    margin-top: 4rem;
+    margin-top: 1rem;
     text-align: center;
     font-size: 2ch;
   }
